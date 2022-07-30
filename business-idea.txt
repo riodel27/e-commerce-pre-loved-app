@@ -1,0 +1,13 @@
+- comment section for product
+- can reserve certain product to a user
+- if certain product has a lot of quantity
+    * then can reserve to multiple user as well or can reserve (number) of certain product to one user.
+    ex: Product A has quantity of 5
+        User A can reserve up to 5 depending of the quantity left
+        User B and C can also reserve for Product A depending of the quantity left
+
+
+- upload multiple files scenario
+    * assume all files uploaded are unique
+    * if for some reason same type of file is uploaded, then maybe have a feature to drag that file to
+        another file then that means that certain product can have multiple media/asset.
