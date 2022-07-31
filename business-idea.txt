@@ -11,3 +11,9 @@
     * assume all files uploaded are unique
     * if for some reason same type of file is uploaded, then maybe have a feature to drag that file to
         another file then that means that certain product can have multiple media/asset.
+
+
+
+
+resource
+ - https://vercel.com/guides/nextjs-prisma-postgres#step-2:-set-up-prisma-and-connect-your-postgresql-database        
