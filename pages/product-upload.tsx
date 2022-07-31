@@ -8,12 +8,13 @@ import update from "immutability-helper";
 import styles from "../styles/Home.module.css";
 import { UiFileInputButton } from "../components/UiFileInputButton";
 
-interface BlobWithPreview extends Blob {
+interface FileExtendBlob extends Blob {
   preview?: string;
+  name?: string;
 }
 
-interface Products {
-  file: Blob;
+interface Product {
+  file: FileExtendBlob;
   preview: string;
   productName: string;
   price: number;
@@ -21,10 +22,10 @@ interface Products {
 
 const ProductUpload: NextPage = () => {
   const router = useRouter();
-  const [products, setProducts] = useState<Products[]>([]);
+  const [products, setProducts] = useState<Product[]>([]);
 
-  const onChange = async (files) => {
-    Array.from(files).forEach(async (file: any) => {
+  const onChange = async (files: Blob[]) => {
+    Array.from(files).forEach(async (file: Blob) => {
       const previewUrl = URL.createObjectURL(file);
 
       setProducts((prev) => [
@@ -54,7 +55,7 @@ const ProductUpload: NextPage = () => {
 
     const formData = new FormData();
 
-    products.forEach(async (product: any) => {
+    products.forEach(async (product: Product) => {
       formData.append("theFiles", product.file);
 
       formData.append(
