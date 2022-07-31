@@ -58,7 +58,7 @@ export const UiFileInputButton: React.FC<IProps> = (props) => {
   };
 
   return (
-    <form ref={formRef} className="mt-10">
+    <form ref={formRef}>
       <button
         className="rounded-lg px-8 py-1 outline outline-offset-2 outline-blue-500"
         type="button"

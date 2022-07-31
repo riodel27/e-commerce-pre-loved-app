@@ -69,12 +69,14 @@ apiRoute.post(
       : [JSON.parse(obj.file)];
 
     const products = req.files.map((product) => {
+      const productData = file.find(
+        (productFile) => productFile.originalname === product.originalname
+      );
+
       return {
         filename: product.filename,
-        price: Math.random(),
-        name: file.find(
-          (productFile) => productFile.originalname === product.originalname
-        ).productName,
+        price: productData.price,
+        name: productData.productName,
       };
     });
 
